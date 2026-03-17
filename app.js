@@ -27,7 +27,7 @@ app.use('/api/v1/products', require('./routes/products'));
 app.use('/api/v1/roles', require('./routes/roles'));
 app.use('/api/v1/auth', require('./routes/auth'));
 
-mongoose.connect('mongodb://localhost:27017/NNPTUD-S3');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/NNPTUD-S3');
 mongoose.connection.on('connected', function () {
   console.log("connected");
 })
